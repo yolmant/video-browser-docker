@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Camera Control</title>
+</head>
+<body>
+  <h2>Camera Stream</h2>
+  <button onclick="startFeed()">Start</button>
+  <button onclick="stopFeed()">Stop</button>
+  <div id="video">
+    <img id="cam_feed" src="" width="640" />
+  </div>
+
+  <script>
+    function startFeed() {
+      document.getElementById("cam_feed").src = "/video_feed";
+      fetch("/start");
+    }
+
+    function stopFeed() {
+      document.getElementById("cam_feed").src = "";
+      fetch("/stop");
+    }
+  </script>
+</body>
+</html>
